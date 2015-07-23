@@ -1,0 +1,11 @@
+<component name="ArtifactManager">
+  <artifact type="jar" build-on-make="true" name="BilgeBot:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/BilgeBot_jar</output-path>
+    <root id="archive" name="BilgeBot.jar">
+      <element id="module-output" name="BilgeBot" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/jna-platform-4.1.0.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/jna-4.1.0.jar" path-in-jar="/" />
+      <element id="library" level="project" name="BilgeBot" />
+    </root>
+  </artifact>
+</component>
