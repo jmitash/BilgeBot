@@ -23,7 +23,7 @@
               <component id="c9f6f" class="javax.swing.JTextArea" binding="statusTextArea">
                 <constraints/>
                 <properties>
-                  <columns value="30"/>
+                  <columns value="35"/>
                   <editable value="false"/>
                   <lineWrap value="true"/>
                   <rows value="10"/>

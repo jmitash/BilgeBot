@@ -2,6 +2,7 @@ package com.knox.bilgebot.gui;
 
 import com.knox.bilgebot.BilgeBot;
 import com.knox.bilgebot.InitThread;
+import com.knox.bilgebot.UpdateManager;
 
 import javax.swing.*;
 import javax.swing.event.ChangeEvent;
@@ -28,6 +29,7 @@ public class StatusFrame extends JFrame
 
     public StatusFrame(BilgeBot bilgeBot)
     {
+        super("Knox's Bilge Bot - " + UpdateManager.getVersionString());
         this.bilgeBot = bilgeBot;
 
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -86,6 +88,27 @@ public class StatusFrame extends JFrame
         {
             //User has moved scroll bar up; don't readjust height
             statusTextArea.append(formattedMessage);
+        }
+    }
+
+    @Override
+    public void setVisible(boolean visible)
+    {
+        super.setVisible(visible);
+
+        if(visible)
+        {
+            Thread updateThread = new Thread() {
+                @Override
+                public void run()
+                {
+                    UpdateManager updateManager = new UpdateManager();
+                    if(updateManager.isUpdateAvailable())
+                    {
+                        updateManager.requestUpdate();
+                    }
+                }};
+            updateThread.start();
         }
     }
 

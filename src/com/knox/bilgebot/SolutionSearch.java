@@ -107,9 +107,18 @@ public class SolutionSearch
         int segmentSize = (board.length * board[0].length) / numThreads;
 
         SolutionSearchThread[] threads = new SolutionSearchThread[numThreads];
+
         for (int i = 0; i < numThreads; i++)
         {
-            SolutionSearch solutionSearch = new SolutionSearch(board, 0, i * segmentSize, (i + 1) * segmentSize);
+            SolutionSearch solutionSearch;
+            if(i == numThreads - 1)
+            {
+                solutionSearch = new SolutionSearch(board, 0, i * segmentSize, board.length * board[0].length);
+            }
+            else
+            {
+                solutionSearch = new SolutionSearch(board, 0, i * segmentSize, (i + 1) * segmentSize);
+            }
             threads[i] = new SolutionSearchThread(solutionSearch, depth);
             threads[i].start();
         }
