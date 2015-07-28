@@ -235,7 +235,9 @@ public class BilgeBot
         status.log("Bilge puzzle found");
 
         overlayFrame = new OverlayFrame(puzzleCoords.x, puzzleCoords.y, exWinMan);
+        overlayFrame.setLocation(statusFrame.getX(), statusFrame.getY() + statusFrame.getHeight());
         overlayFrame.setVisible(overlay);
+
         int adjustedX = exWinMan.getWindowBounds().x + puzzleCoords.x;
         int adjustedY = exWinMan.getWindowBounds().y + puzzleCoords.y;
         overlayFrame.setImage(robot.createScreenCapture(new Rectangle(adjustedX, adjustedY, 285, 555)));

@@ -18,6 +18,7 @@ public class CursorTrackingThread extends Thread
     public CursorTrackingThread(int x, int y, ExternalWindowManager externalWindowManager, OverlayFrame overlayFrame)
     {
         super("Cursor Tracking Thread");
+        this.setDaemon(true);
         xOffset = x;
         yOffset = y;
         this.externalWindowManager = externalWindowManager;

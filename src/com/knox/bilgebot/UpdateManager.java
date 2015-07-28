@@ -15,7 +15,7 @@ import java.util.List;
 public class UpdateManager
 {
     private final static int VERSION_MAJOR = 1;
-    private final static int VERSION_MINOR = 0;
+    private final static int VERSION_MINOR = 1;
     private final static String UPDATE_URL = "https://dl.dropboxusercontent.com/u/48365491/bilgebot/update.dat";
 
 

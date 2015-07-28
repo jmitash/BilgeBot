@@ -35,7 +35,6 @@ public class OverlayFrame extends JFrame
         this.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         this.setSize(300, 590);
         this.setContentPane(new ImagePanel());
-        cursorTrackingThread.start();
     }
 
     public void setImage(BufferedImage bufferedImage)
@@ -47,6 +46,7 @@ public class OverlayFrame extends JFrame
     @Override
     public void setVisible(boolean visible)
     {
+        super.setVisible(visible);
         if(visible)
         {
             cursorTrackingThread.setShouldRun(true);

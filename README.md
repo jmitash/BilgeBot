@@ -11,10 +11,10 @@ Once the bot knows what pieces are on the board, it uses a brute-force algorithm
 Lastly, and most simply is the mouse movement. The bot will fit a quadratic equation to the start and end points of the mouse movement. The bot then uses the time to tell where along the curve the mouse should be. Admittedly it's not the best solution, but so far it has been effective.
 
 ### Compiling the bot
-There are only 2 requirements if you are compiling the bot on your own:
 <ol>
 <li> The bot requires <a href="https://github.com/twall/jna">JNA</a>, or Java Native Access to be able to keep track of the Puzzle Pirates window.
 <li> The contents of the /rsc/ folder must be built into the root directory of the JAR.
+<li> The StatusFrame form was created with the IntelliJ IDEA UI designer. I recommend you use the IDE to compile this.
 </ol>
 
 Aside from that, compile the bot as you would any other program.

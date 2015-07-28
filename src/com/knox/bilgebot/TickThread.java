@@ -11,6 +11,7 @@ public class TickThread extends Thread
     public TickThread(BilgeBot bilgeBot)
     {
         super("Bot Tick Thread");
+        this.setDaemon(true);
         this.bilgeBot = bilgeBot;
         shouldRun = true;
     }
@@ -25,7 +26,7 @@ public class TickThread extends Thread
                 sleep(100);
             } catch (InterruptedException e)
             {
-
+                //do nothing
             }
             long initTickTime = System.currentTimeMillis();
             bilgeBot.tick();

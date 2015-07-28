@@ -34,6 +34,8 @@ public class MouseMoveThread extends Thread
     public MouseMoveThread()
     {
         super("Mouse Move Thread");
+        this.setDaemon(true);
+        this.setPriority(Thread.MAX_PRIORITY);
         try
         {
             robot = new Robot();

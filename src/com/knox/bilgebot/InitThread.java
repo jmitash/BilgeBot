@@ -13,6 +13,7 @@ public class InitThread extends Thread
     public InitThread(BilgeBot bilgeBot, int depth, boolean auto, boolean overlay)
     {
         super("Bilge Bot init thread");
+        this.setDaemon(true);
         this.bilgeBot = bilgeBot;
         this.depth = depth;
         this.auto = auto;

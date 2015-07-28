@@ -14,6 +14,7 @@ public class SolutionSearchThread extends Thread
     public SolutionSearchThread(SolutionSearch solutionSearch, int depth)
     {
         super("Solution Search Thread");
+        this.setDaemon(true);
         this.solutionSearch = solutionSearch;
         this.depth = depth;
     }
